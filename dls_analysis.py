@@ -40,13 +40,13 @@ def Cumulant(tau, B, gamma, mu, beta):
     return y
 
 
-def grab_metadata(fh, yaml=False):
+def grab_metadata(fh, use_yaml=False):
     """
     Function which reads in the corresponding yaml file of the relevant data file. Returns the temperature and scattering angle.
     You can choose to use the yaml file or use the meta data embedded within each measurement file.
     """
 
-    if yaml:
+    if use_yaml:
         with open(fh[:-7] + "_measurementSummary.yml", "r") as file:
             md = yaml.safe_load(file)
 
